@@ -92,11 +92,11 @@ class Board extends Component {
       let cellElements = [];
       for (let x = 0; x < this.props.ncols; x++) {
         cellElements.push(
-          <Cell isLit={this.state.board[y][x]} key={`${x}-${y}`} />
+          <Cell key={`${y}-${x}`} isLit={this.state.board[y][x]} />
         );
       }
       // console.log(cellElements);
-      tableBoard.push(<tr>{cellElements}</tr>);
+      tableBoard.push(<tr key={y}>{cellElements}</tr>);
     }
 
     return (
